@@ -28,21 +28,32 @@ public class Item {
     }
 
     @Override
-    public String toString(){
-        StringBuilder menu = new StringBuilder();
-        menu.append(name);
-        menu.append(".........");
-        menu.append(price);
+    public String toString() {
+    StringBuilder menu = new StringBuilder();
+    menu.append(name);
+    menu.append(".........");
+    menu.append(price);
+    menu.append("$\n");
+    
+    if (extra != null && !extra.isEmpty()) {
         StringBuilder menu_extra = new StringBuilder();
-        menu.append(name ="w/"); menu.append(".........");
-        menu.append(price);
-        menu.append("$\t");
-        menu.append("$\t");
-       
-
-        menu.append(extra);
-        if (Prices.contains(this.extra())){
-            return menu.append(extra);   
-        }
+        menu_extra.append(name);
+        menu_extra.append("  /w  ");
+        menu_extra.append(extra);
+        menu_extra.append(".........");
+        menu_extra.append(price);
+        menu_extra.append("$\t");
+        return menu.toString() + menu_extra.toString();
+    } else {
+        return menu.toString();
+    }
+    }
+    @Override
+    public boolean equals(Object obj) {
+        return (obj instanceof Item) && this.name.equals(((Item)obj).name);
+    }
+    @Override
+    public int hashCode() {
+        return this.name.hashCode();
     }
 }
