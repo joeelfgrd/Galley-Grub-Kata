@@ -54,7 +54,7 @@ public class App
 
         // formatea la salida de cada entrada del diccionario como prefieras
         System.out.print("\n\t --- PRICES ---  \n");
-        RetailPrice.display();
+        Price.display();
 
         
          * Crea los items del menu 
