@@ -28,12 +28,12 @@ public class Item implements Product {
     }
 
     @Override
-    public String toString() {
+public String toString() {
     StringBuilder menu = new StringBuilder();
     menu.append(name);
-    menu.append(".........");
-    menu.append(price);
-    menu.append("$\n");
+    menu.append("....");
+    menu.append(String.format("%.2f", price)); 
+    menu.append("$");
     
     if (extra != null && !extra.isEmpty()) {
         StringBuilder menu_extra = new StringBuilder();
@@ -41,13 +41,18 @@ public class Item implements Product {
         menu_extra.append("  /w  ");
         menu_extra.append(extra);
         menu_extra.append(".........");
-        menu_extra.append(price);
+        menu_extra.append(String.format("%.2f", price));
         menu_extra.append("$\t");
         return menu.toString() + menu_extra.toString();
     } else {
         return menu.toString();
     }
-    }
+}
+
+    
+
+
+    
     @Override
     public boolean equals(Object obj) {
         return (obj instanceof Item) && this.name.equals(((Item)obj).name);
@@ -57,3 +62,4 @@ public class Item implements Product {
         return this.name.hashCode();
     }
 }
+
