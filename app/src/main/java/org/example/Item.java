@@ -1,6 +1,6 @@
 package org.example;
 
-public class Item {
+public class Item implements Product {
     String name ="";
     Double price = 0d;
     String extra ="";
