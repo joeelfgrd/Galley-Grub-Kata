@@ -1,7 +1,11 @@
 package org.example;
 
 public interface Ticket {
-    public Comanda getOrder();
-    public Double getTotal();
-    public void print();
+    Comanda getOrder();
+
+    void setChain(Extra extra); 
+
+    Double total();
+
+    void print();
 }
