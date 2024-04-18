@@ -22,17 +22,10 @@ public class Prices {
     }
     public static void display(){
         for (Map.Entry<String, Double> entry : Prices.prices.entrySet()) {
-            System.out.println(entry.getKey() + " :\t " + entry.getValue());
+            System.out.println("\t" + entry.getKey() + " : " + entry.getValue());
         }
     }
 
    
 }
-
-    
-
-
-
-
-
 
