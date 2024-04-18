@@ -3,7 +3,7 @@ package org.example;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNotSame;
-/*import static org.junit.Assert.assertTrue;*/
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -38,7 +38,7 @@ public class ItemFactoryTest {
         assertEquals(2, ItemFactory.size()); 
     }
 
-    /*@Test
+    @Test
     public void get_present_item_test() {
 
         Item item = ItemFactory.getItem("Krabby Patty", 1.25);
@@ -51,7 +51,7 @@ public class ItemFactoryTest {
         assertEquals(1, ItemFactory.size());
         assertTrue(item == itemClon);
     } 
-
+   
     @Test
     public void get_extra_item_test() {
 
@@ -67,7 +67,7 @@ public class ItemFactoryTest {
         assertEquals("Coral Bits w/ medium....1,00$", item.toString());
         assertEquals(2, ItemFactory.size()); 
     }
-
+    
     @Test
     public void get_present_extra_item_test() {
 
@@ -90,5 +90,5 @@ public class ItemFactoryTest {
         Item kpatty = ItemFactory.getItem("Krabby Patty", 1.25);
         assertEquals(2, ItemFactory.size());
         assertNotSame(kpattywc,kpatty);
-    }*/
+    }
 }

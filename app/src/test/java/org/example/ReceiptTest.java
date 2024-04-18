@@ -6,14 +6,6 @@ import static org.junit.Assert.assertNotNull;
 import org.junit.Before;
 import org.junit.Test;
 
-/*import edu.poniperro.galleygrub.extras.CheeseExtra;
-import edu.poniperro.galleygrub.extras.Extra;
-import edu.poniperro.galleygrub.extras.Regular;
-import edu.poniperro.galleygrub.extras.SauceExtra;
-import edu.poniperro.galleygrub.extras.SizeLargeExtra;
-import edu.poniperro.galleygrub.order.Comanda;
-import edu.poniperro.galleygrub.order.Order;*/
-
 public class ReceiptTest {
 
     Receipt receipt;
@@ -25,12 +17,12 @@ public class ReceiptTest {
 
         order = new Order();
 
-        order.addItem("Krabby Patty", 1.25, "cheese");
-        order.addItem("Coral Bits", 1.00, "medium"); // si definir medium
-        order.addItem("Kelp Rings", 1.50, "sauce");
-        order.addItem("Golden Loaf", 2.00, "sauce");
-        order.addItem("Seafoam Soda", 1.00, "large");
-        order.addItem("Coral Bits", 1.00, "large");
+        order.additem("Krabby Patty", 1.25, "cheese");
+        order.additem("Coral Bits", 1.00, "medium"); // si definir medium
+        order.additem("Kelp Rings", 1.50, "sauce");
+        order.additem("Golden Loaf", 2.00, "sauce");
+        order.additem("Seafoam Soda", 1.00, "large");
+        order.additem("Coral Bits", 1.00, "large");
 
         receipt = new Receipt(order);
     }
