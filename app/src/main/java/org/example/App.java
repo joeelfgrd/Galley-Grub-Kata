@@ -1,19 +1,7 @@
-/*package edu.poniperro.galleygrub;
-
-import edu.poniperro.galleygrub.extras.CheeseExtra;
-import edu.poniperro.galleygrub.extras.Extra;
-import edu.poniperro.galleygrub.extras.Regular;
-import edu.poniperro.galleygrub.extras.SauceExtra;
-import edu.poniperro.galleygrub.extras.SizeLargeExtra;
-import edu.poniperro.galleygrub.items.Item;
-import edu.poniperro.galleygrub.items.RetailPrice;
-import edu.poniperro.galleygrub.items.Product;
-import edu.poniperro.galleygrub.order.Comanda;
-import edu.poniperro.galleygrub.order.Order;
-import edu.poniperro.galleygrub.receipt.Receipt;
-import edu.poniperro.galleygrub.receipt.Ticket;
+package org.example;
 
 
+/**
  * 
  * Bob Esponja trabaja como cocinero en el Krusty Krab, 
  * restaurante famoso por su hamburguesa de autor
@@ -30,13 +18,13 @@ import edu.poniperro.galleygrub.receipt.Ticket;
  * 
  * Intenta hacer como que programas si no quieres terminar
  * en la cocina ayudando a Bob a preparar Krusty Burguers.
- 
+ */
 public class App 
 {
     public static void main( String[] args )
     {
 
-        
+        /**
          * Crea un diccionario con los precios
          * de los extras.
          *  
@@ -48,15 +36,15 @@ public class App
          * 
          * Lee los precios de los items en la imagen 
          * del menu proporcionada.
-         
+         */
 
-        RetailPrice.init_prices();
+        Prices.init_prices();
 
         // formatea la salida de cada entrada del diccionario como prefieras
         System.out.print("\n\t --- PRICES ---  \n");
-        Price.display();
+        Prices.display();
 
-        
+        /**
          * Crea los items del menu 
          * y printa sus datos.
          * 
@@ -69,7 +57,7 @@ public class App
          * Incluye los metodos sobrescritos
          * equals y hascode para comparar objetos
          * de tipo Item.
-         
+         */
 
         System.out.print("\n\t --- GALLEY GRUB ---  \n");
         
@@ -84,7 +72,7 @@ public class App
         Product soda = new Item("Seafoam Soda", 1.00);
         display(soda);
 
-        
+        /**
          * Bubble Bass llega al restaurante
          * y hace una comanda muy simple.
          * Quiere todo lo que hay en el menu
@@ -109,29 +97,29 @@ public class App
          * Cuando solicitas crear de nuevo ese Item 
          * te devuelve la misma referencia al objeto que has creado antes,
          * ahorrando asi memoria.
-         
+         */
 
         Comanda order = new Order();
 
-        order.addItem("Krabby Patty", 1.25);
-        order.addItem("Coral Bits", 1.00);
-        order.addItem("Kelp Rings", 1.50);
-        order.addItem("Golden Loaf", 2.00);
-        order.addItem("Seafoam Soda", 1.00);
+        order.additem("Krabby Patty", 1.25);
+        order.additem("Coral Bits", 1.00);
+        order.additem("Kelp Rings", 1.50);
+        order.additem("Golden Loaf", 2.00);
+        order.additem("Seafoam Soda", 1.00);
 
         order.display();
 
-        *
+        /**
          * Squidward Tentacles genera el recibo,
          * la app calcula el importe total de la comanda
          * y lo muestra en pantalla.
-         
+         */
 
         Ticket receipt = new Receipt(order);
         receipt.total();
         receipt.print();
 
-        
+        /**
          * Eugene H. Krabs quiere obtener un margen
          * de beneficio extra y decide cargar
          * por los extras.
@@ -144,7 +132,7 @@ public class App
          * NO ACTUALICES EL PRECIO DEL ITEM
          * con el cargo extra 
          * pues eso lo haremos con otro componente. 
-         
+         */
 
         System.out.print("\n\t --- GALLEY GRUB ---  \n");
 
@@ -159,27 +147,27 @@ public class App
         soda = new Item("Seafoam Soda", 1.00, "large");
         display(soda);
 
-        
+        /**
          * Buble Fish sigue zampando
          * y realiza una comanda cargada
          * de extras.
-         
+         */
 
         order = new Order();
 
-        order.addItem("Krabby Patty", 1.25, "cheese");
-        order.addItem("Coral Bits", 1.00);
-        order.addItem("Kelp Rings", 1.50, "sauce");
-        order.addItem("Golden Loaf", 2.00, "sauce");
-        order.addItem("Seafoam Soda", 1.00, "large");
-        order.addItem("Coral Bits", 1.00, "large");
+        order.additem("Krabby Patty", 1.25, "cheese");
+        order.additem("Coral Bits", 1.00);
+        order.additem("Kelp Rings", 1.50, "sauce");
+        order.additem("Golden Loaf", 2.00, "sauce");
+        order.additem("Seafoam Soda", 1.00, "large");
+        order.additem("Coral Bits", 1.00, "large");
 
         // Utiliza el diccionario Prices para incluir
         // el precio de los extras en la salida por consola.
         order.display();
         
 
-        
+        /**
          * Define el importe a cargar por cada extra.
          * 
          * Configura los tipos de Extras:
@@ -195,7 +183,7 @@ public class App
          * total de Order (la comanda).
          * 
          * El precio total de la comanda se guarda en Order.
-         
+         */
 
         Extra regular = new Regular(); // suma el precio base
         Extra cheese = new CheeseExtra(); // suma el precio del extra cheese
@@ -206,11 +194,11 @@ public class App
         cheese.setNextExtra(sauce);
         sauce.setNextExtra(size);
 
-        
+        /**
          * Squidward Tentacles genera el recibo,
          * la app calcula el importe total de la comanda
          * y lo muestra en pantalla.
-         
+         */
 
         System.out.print("\n\t --- PRINTIG RECEIPT BIPBIPBIP ---  \n");
 
@@ -224,4 +212,4 @@ public class App
     public static void display(Product item) {
         System.out.print("\t" + item.toString() + "\n");
     }
-}*/
+}
