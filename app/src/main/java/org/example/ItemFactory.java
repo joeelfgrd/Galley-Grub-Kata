@@ -26,6 +26,4 @@ public class ItemFactory {
         items.clear();
     }    
 }
-  
-
 
