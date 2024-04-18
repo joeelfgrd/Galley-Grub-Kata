@@ -18,6 +18,9 @@ public class Order implements Comanda{
     public int size(){
         return this.OrderList.size();
     }
+    public List<Item> ItemList(){
+        return OrderList;
+    }
     
     private Double total = 0.0;
     
@@ -34,3 +37,4 @@ public class Order implements Comanda{
         }
     }
 }
+
