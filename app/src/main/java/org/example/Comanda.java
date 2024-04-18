@@ -1,4 +1,5 @@
 package org.example;
+import java.util.List;
 
 public interface Comanda {
    public void additem(String name,Double price);
@@ -7,4 +8,5 @@ public interface Comanda {
    public Double getTotal();
    public void updateTotal(Double total);
    public void display();
+   public List<Item> ItemList();
 }
